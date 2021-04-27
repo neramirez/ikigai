@@ -4,12 +4,12 @@ CREATE TABLE IF NOT EXISTS `relative` (
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NULL,
-  `home_id` INT NOT NULL,
+  `home_id` INT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
   INDEX `fk_relative_home1_idx` (`home_id` ASC) VISIBLE,
   CONSTRAINT `fk_relative_home1`
     FOREIGN KEY (`home_id`)
     REFERENCES `home` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE NO ACTION)

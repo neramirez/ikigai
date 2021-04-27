@@ -2,4 +2,5 @@ rootProject.name = 'ikigai'
 include 'whatever'
 include 'persistence'
 include 'api'
+include 'security'
 

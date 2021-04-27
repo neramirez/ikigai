@@ -19,12 +19,15 @@ repositories {
 }
 
 dependencies {
+    compile project(':security')
+    compile project(':persistence')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.8.RELEASE'
     compile group: 'commons-io', name: 'commons-io', version: '2.4'
     runtime group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.1.8.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.8.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-    compile project(':persistence')
 }

@@ -16,4 +16,9 @@ public class IntelligenceController {
     public Intelligence newIntelligence(@RequestBody IntelligenceJson intelligenceJson) {
         return intelligenceService.newIntelligence(intelligenceJson);
     }
+
+    @PostMapping("/id/{intelligenceId}/area/{areaId}")
+    public Intelligence newIntelligenceArea(@PathVariable Long areaId, @PathVariable Long intelligenceId) {
+        return intelligenceService.generateIntelligenceArea(intelligenceId, areaId);
+    }
 }

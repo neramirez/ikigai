@@ -3,12 +3,12 @@ CREATE TABLE IF NOT EXISTS `home` (
   `active` TINYINT NULL,
   `last_payment` DATETIME NULL,
   `next_payment` DATETIME NULL,
-  `membership_id` INT NOT NULL,
+  `membership_id` INT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   INDEX `fk_home_membership1_idx` (`membership_id` ASC) VISIBLE,
   CONSTRAINT `fk_home_membership1`
     FOREIGN KEY (`membership_id`)
     REFERENCES `membership` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE NO ACTION)

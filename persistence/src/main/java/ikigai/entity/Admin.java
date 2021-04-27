@@ -1,7 +1,8 @@
 package ikigai.entity;
+
 import lombok.*;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
@@ -9,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Tutor {
+public class Admin {
 
     @Id
     @Column
@@ -17,7 +18,7 @@ public class Tutor {
     private Long id;
 
     @Column
-    private String firstName;
+    private String name;
 
     @Column
     private String lastName;
@@ -26,7 +27,9 @@ public class Tutor {
     private String email;
 
     @Column
+    private String role;
+
+    @Column
+    @ToString.Exclude
     private String password;
-
-
 }

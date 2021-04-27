@@ -1,6 +1,7 @@
 package ikigai.entity;
 
 import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +16,12 @@ public class Membership {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
+    private String name;
+
+    @Column
+    private String description;
 
     @Column
     private String paymentRange;
